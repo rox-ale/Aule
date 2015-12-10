@@ -81,6 +81,8 @@ echo "<input type=\"image\" src=\"immagini/indietro1.png\" border=\"0\"
 
 /**
  * crea un array con selezionate le ore occuppate
+ * $tabella array contentente tutte le prenotazioni per un giorno di un'aula
+ * tabella sql
  */
 function creaArray($tabella) {
 	$array = array ();
