@@ -36,7 +36,7 @@
 							
 							$id = $row ['Codice'];
 							$nome = $row ['Nome'];
-							echo '<input type="radio" name="aula" value="' . $id . '">' . $nome . '</><br>';
+							echo '<input type="radio" name="aula" checked value="' . $id . '">' . $nome . '</><br>';
 						}
 						?>
 						</br> 
