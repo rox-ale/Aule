@@ -6,33 +6,6 @@
 $db = new PDO ( 'sqlite:noiMarano_PDO.sqlite' );
 
 
-// $db->exec ( "
-// INSERT INTO Prenotazione (Data, OraInizio, OraFine, Titolo,Telefono,CodiceAula,CodiceUtente) VALUES
-// ('7/12/2015', '13.00', '14.30', 'Prenotazione di prova','041515151',1,1);
-// " );
-
-// $db->exec ( "
-// INSERT INTO Prenotazione (Data, OraInizio, OraFine, Titolo,Telefono,CodiceAula,CodiceUtente) VALUES
-// ( '7/12/2015', '12.30', '15.00', 'Prenotazione di prova','041515151',2,1);
-// " );
-
-// $db->exec ( "
-// INSERT INTO Prenotazione ( Data, OraInizio, OraFine, Titolo,Telefono,CodiceAula,CodiceUtente) VALUES
-// ( '7/12/2015', '12.30', '15.30', 'Prenotazione di prova','041515151',3,1);
-// " );
-
-// $db->exec ( "
-// INSERT INTO Prenotazione ( Data, OraInizio, OraFine, Titolo,Telefono,CodiceAula,CodiceUtente) VALUES
-// ( '7/12/2015', '17.00', '19.00', 'Prenotazione di prova','041515151',1,1);
-// " );
-
-// $db->exec ( "
-// INSERT INTO Prenotazione ( Data, OraInizio, OraFine, Titolo,Telefono,CodiceAula,CodiceUtente) VALUES
-// ( '7/12/2015', '12.00', '17.30', 'Prenotazione di prova','041515151',4,1);
-// " );
-
-
-
 
 
 $data = $_POST ['todays_date'];
