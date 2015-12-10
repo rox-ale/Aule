@@ -47,7 +47,7 @@
 						
 						for($i = 7; $i < 24; $i ++) {
 							
-							echo '<option value="' . $i . '.00">' . $i . '</option>';
+							echo '<option value="' . $i . '.00">' . $i . '.00</option>';
 							echo '<option value="' . $i . '.30' . '">' . $i . '.30' . '</option>';
 						}
 						?></select> </br> <label for="oraFine">Ora Fine </label> <select
@@ -56,7 +56,7 @@
 						
 						for($i = 7; $i < 24; $i ++) {
 							
-							echo '<option value="' . $i . '.00">' . $i . '</option>';
+							echo '<option value="' . $i . '.00">' . $i . '.00</option>';
 							echo '<option value="' . $i . '.30' . '">' . $i . '.30' . '</option>';
 						}
 						echo '<option value="' . '24' . '">' . '24' . '</option>';
