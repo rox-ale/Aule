@@ -13,6 +13,7 @@ $telefono = $_POST ['telefono'];
 $descrizione = $_POST ['descrizione'];
 $aula = $_POST ['aula'];
 echo "aula" . $aula . "<br>";
+echo "data" . $data . "<br>";
 
 if ((! (isset ( $titolo ) && ! empty ( $titolo ) && isset ( $data ) && ! empty ( $data ) && isset ( $aula ) && ! empty ( $aula ))) || ($oraInizio >= $oraFine)) {
 	echo "<p>Errore nell'inserimento dei dati</p>";
@@ -43,7 +44,7 @@ if ((! (isset ( $titolo ) && ! empty ( $titolo ) && isset ( $data ) && ! empty (
 			$fine = $oraFine * 2 + 1;
 		}
 		for(; $i <= $fine; $i ++) {
-			if ($arrayOra [$i] ==1)
+			if ($arrayOra [$i] == 1)
 				$result = false;
 		}
 		
@@ -65,7 +66,7 @@ if ((! (isset ( $titolo ) && ! empty ( $titolo ) && isset ( $data ) && ! empty (
 			$sth->execute ();
 			
 			echo "<p> dati inseriti </p>";
-		}else{
+		} else {
 			
 			echo "<p>Aula occupata</p>";
 		}

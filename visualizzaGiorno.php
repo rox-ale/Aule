@@ -8,8 +8,13 @@
  $giorno = $_GET ['Data'];
 //$giorno = "7/12/2015";
 //$codice = 1;
+// echo "<h1>" . $giorno . "</h1>";
+	$dividi=explode("/", $giorno);
+	// echo "<h1>" . $dividi[0] . "</h1>";
+	if((strlen($dividi[0]))==1){
+		$giorno="0".$dividi[0]."/".$dividi[1]."/".$dividi[2];
+	}
 echo "<h1>" . $giorno . "</h1>";
-
 ?>
 <table border="1">
 	<thead>
