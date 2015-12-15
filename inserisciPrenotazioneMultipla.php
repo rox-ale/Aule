@@ -3,6 +3,9 @@
 /**
  * sisalvanole prenotazioni multiple
  * */
+
+
+date_default_timezone_set('UTC');
 $db = new PDO ( 'sqlite:noiMarano_PDO.sqlite' );
 
 $termine = $_POST ['termine'];
@@ -49,6 +52,46 @@ if((strlen($dividi[0]))==1){
 	$data="0".$dividi[0]."/".$dividi[1]."/".$dividi[2];
 }
 echo $data."<br>";
+// $data contiene il primo giorno utile per salvarlo sul database a partire dal giorno corrente
+
+// if ((! (isset ( $titolo ) && ! empty ( $titolo )  && isset ( $aula ) && ! empty ( $aula ))) || ($oraInizio >= $oraFine)) {
+// 	echo "<p>Errore nell'inserimento dei dati</p>";
+// }else{
+	
+// 	/*
+// 	 * inserisco le prenotazioni affinche la data è minore della data termine
+// 	 * */
+// 	while(datediff("G", $data, $termine)>=0){
+// 		//non controllo se c'è già una prenotazione per quell'aula
+		
+// 		try {
+
+		
+			
+// 				$sth = $db->prepare ( "INSERT INTO Prenotazione (Data,OraInizio,OraFine,Descrizione,Titolo,Telefono,CodiceUtente,CodiceAula) values (:data, :oraInizio, :oraFine, :descrizione, :titolo, :telefono, :codiceUtente, :codiceAula)" );
+					
+// 				$sth->bindParam ( ':data', $data );
+// 				$sth->bindParam ( ':oraInizio', $oraInizio );
+// 				$sth->bindParam ( ':oraFine', $oraFine );
+// 				$sth->bindParam ( ':descrizione', $descrizione );
+// 				$sth->bindParam ( ':titolo', $titolo );
+// 				$sth->bindParam ( ':telefono', $telefono );
+// 				$codiceUtente = '1';
+// 				$sth->bindParam ( ':codiceUtente', $codiceUtente );
+// 				$sth->bindParam ( ':codiceAula', $aula );
+// 				$sth->execute ();
+					
+// 				echo "<p> dati inseriti </p>";
+// 				$data=date( "d-m-Y", strtotime( "$data +7 day" ) );
+				
+		
+// 		} catch ( Exception $e ) {
+// 			echo "Errore nel salvataggio dei dati";
+// 		}		
+		
+//	}
+	
+//}
 
 ?>
 
