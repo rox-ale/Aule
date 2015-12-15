@@ -19,6 +19,7 @@ foreach ( $result as $row ) {
 
 
 	echo "<td> <a href=eliminaPrenotazione.php?Codice=".$row['Codice'].">Elimina</a>";
+	echo "<td> <a href=visualizzaPrenotazione.php?Codice=".$row['Codice'].">Visualizza</a>";
 	print "<td>" . $row ['Telefono'] . "</td></tr>";
 }
 print "</table>";
