@@ -1,6 +1,7 @@
 <?php
 /**
  * visualizza una prenotazione
+ * da sistemare
  * 
  */
 $id = ($_GET ['Codice']);

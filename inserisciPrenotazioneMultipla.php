@@ -100,6 +100,52 @@ else{
 	}
 	
 }
+// $data contiene il primo giorno utile per salvarlo sul database a partire dal giorno corrente
+
+if ((! (isset ( $titolo ) && ! empty ( $titolo )  && isset ( $aula ) && ! empty ( $aula ))) || ($oraInizio >= $oraFine)) {
+	echo "<p>Errore nell'inserimento dei dati</p>";
+}else{
+	
+	/*
+	 * inserisco le prenotazioni affinche la data è minore della data termine
+	 * */
+	while(datediff("G", $data, $termine)>=0){
+		//non controllo se c'è già una prenotazione per quell'aula
+		
+		try {
+// 			// seleziono tutte le pretoazioni dell'aula con $codice di $giorno
+// 			$statment = $db->prepare ( 'SELECT * FROM (aula join prenotazione on Aula.codice=Prenotazione.CodiceAula) where Aula.Codice= :codice and Data= :giorno' );
+// 			$statment->bindParam ( ':codice', $aula );
+// 			$statment->bindParam ( ':giorno', $data );
+// 			$statment->execute ();
+// 			$result = $statment->fetchAll ();
+// 			$arrayOra = creaArray ( $result );
+		
+			
+				$sth = $db->prepare ( "INSERT INTO Prenotazione (Data,OraInizio,OraFine,Descrizione,Titolo,Telefono,CodiceUtente,CodiceAula) values (:data, :oraInizio, :oraFine, :descrizione, :titolo, :telefono, :codiceUtente, :codiceAula)" );
+					
+				$sth->bindParam ( ':data', $data );
+				$sth->bindParam ( ':oraInizio', $oraInizio );
+				$sth->bindParam ( ':oraFine', $oraFine );
+				$sth->bindParam ( ':descrizione', $descrizione );
+				$sth->bindParam ( ':titolo', $titolo );
+				$sth->bindParam ( ':telefono', $telefono );
+				$codiceUtente = '1';
+				$sth->bindParam ( ':codiceUtente', $codiceUtente );
+				$sth->bindParam ( ':codiceAula', $aula );
+				$sth->execute ();
+					
+				echo "<p> dati inseriti </p>";
+				$data=date( "d-m-Y", strtotime( "$data +7 day" ) );
+				
+		
+		} catch ( Exception $e ) {
+			echo "Errore nel salvataggio dei dati";
+		}		
+		
+	}
+	
+}
 
 ?>
 
